@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Weather from './Components/Weather';
+import Nav from './Components/Nav';
 
 import { LanguageContext } from './context';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,7 +19,7 @@ function App() {
     <div className="App">
 
     <LanguageContext.Provider value="En">
-
+        <Nav />
         <Weather />
    
     </LanguageContext.Provider> 
