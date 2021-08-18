@@ -1,5 +1,5 @@
 
-import React , { useState } from 'react';
+import { useState } from 'react';
 
 
 function Weather(props) {
@@ -18,6 +18,7 @@ function Weather(props) {
         setWeather(data)
         
         setIcon(data.weather[0].icon);
+
     }
 
     const dateBuilder = (d) => {
@@ -34,49 +35,43 @@ function Weather(props) {
     
       }
 
-      const icons = (props) => {
-        let weather = weather.weather[0].main;
-
-      }
-      const weatherIcon = (weather.icon);
-     
     return (
-        <div className={(typeof weather.main != 'undefined') 
-        ? ((weather.main.temp > 16) 
-        ? 'app-warm' : 'app') 
-        : 'app'}>
-            <main>
-        <form onSubmit = { search}>
-        <div className="search-box">
-          <input type="text" className="search-bar" placeholder="Search..." 
-         value={query} onChange= { (e)=> setQuery(e.target.value) }/>
-          <button type ="submit" >search</button>
-        </div>
-        </form>
-        {(typeof weather.main !== 'undefined' ) && (
-          <div>
-          <div className="location-box">
-            <div className="location">{weather.name}</div>
-            <div className="date">{dateBuilder(new Date())}</div>
-          </div>
-          <div className="weather-box">
-            <div className="weather">{weather.weather[0].main}</div>
-            <div className=''>
-              <img className='icon' src={`http://openweathermap.org/img/w/${icon}.png`} />
-
+    <div className={(typeof weather.main != 'undefined') 
+      ? ((weather.main.temp > 16) 
+      ? 'app-warm' : 'app') 
+      : 'app'}>
+    <main>
+          <form onSubmit = { search}>
+            <div className="search-box">
+              <input type="text" className="search-bar" placeholder="Search..." 
+              value={query} onChange= { (e)=> setQuery(e.target.value) }/>
+              <button type ="submit" >search</button>
             </div>
-          </div>
-          <div className="temp">
-                <div className="temp">{Math.round(weather.main.temp)}°</div>
+          </form>
+        {(typeof weather.main !== 'undefined' ) && (
+          <div className="container">
+            <div className="location-box">
+              <h3>Today</h3>
+              <div className="location">{weather.name}</div>
+              <div className="date">{dateBuilder(new Date())}</div>
+            </div>
+            <div className="weather-box">
+              <div className="weather">{weather.weather[0].main}</div>
+                <div className=''>
+                <img className='icon' src={`http://openweathermap.org/img/w/${icon}.png`} />
+
+                <div className="temp">
+                    <div className="temp">{Math.round(weather.main.temp)}°</div>
+                    </div>
                 </div>
-          </div>
+              </div>
+            </div>
+            
         ) }
-​
-        
-      </main>
-      
-        </div>
-    )
+​    </main>
+
+    </div>
+  )
    
 }
 
