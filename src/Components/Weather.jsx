@@ -59,8 +59,7 @@ function Weather(props) {
             <div className="weather-box">
               <div className="weather">{weather.weather[0].main}</div>
                 <div className=''>
-                <img className='icon' src={`http://openweathermap.org/img/w/${icon}.png`} />
-
+                <img className='icon' src={`http://openweathermap.org/img/w/${icon}.png`} alt="Weather icon" />
                 <div className="temp">
                     <div className="temp">{Math.round(weather.main.temp)}°</div>
                     </div>
