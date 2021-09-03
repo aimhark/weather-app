@@ -1,7 +1,7 @@
 # Weather App
 
-![image](weather-app-cold.png)
-![image](weather-app-warm.png)
+![image](mock-up/weather-app-mock-up.png)
+
 
 ## About the Project
 
