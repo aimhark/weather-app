@@ -2,6 +2,9 @@
 
 ![image](mock-up/weather-app-mock-up.png)
 
+## Live Demo
+
+[Weather App](https://aimhark.github.io/weather-app/)
 
 ## About the Project
 
